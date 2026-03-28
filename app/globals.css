@@ -1,26 +1,151 @@
+/* app/globals.css — AstroCool space theme */
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-space-900: #050914;
+  --color-space-800: #0a1128;
+  --color-space-700: #111d3a;
+  --color-space-600: #1a2a4a;
+  --color-astro-blue: #3b82f6;
+  --color-astro-indigo: #6366f1;
+  --color-astro-cyan: #22d3ee;
+  --color-astro-amber: #f59e0b;
+  --color-glass: rgba(255, 255, 255, 0.05);
+  --color-glass-border: rgba(255, 255, 255, 0.1);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ── Base ────────────────────────────────────────── */
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  background: var(--color-space-900);
+  color: #e2e8f0;
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ── Star field (CSS-only) ───────────────────────── */
+
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+body::before {
+  background: radial-gradient(
+    ellipse at 20% 50%,
+    rgba(99, 102, 241, 0.08) 0%,
+    transparent 60%
+  ),
+  radial-gradient(
+    ellipse at 80% 20%,
+    rgba(34, 211, 238, 0.06) 0%,
+    transparent 50%
+  );
+}
+
+body::after {
+  box-shadow:
+    /* Layer 1 — tiny stars */
+    120px  80px  0 0.4px rgba(255,255,255,0.7),
+    340px  140px 0 0.3px rgba(255,255,255,0.5),
+    560px  60px  0 0.5px rgba(255,255,255,0.8),
+    780px  200px 0 0.3px rgba(255,255,255,0.6),
+    90px   320px 0 0.4px rgba(255,255,255,0.5),
+    450px  400px 0 0.5px rgba(255,255,255,0.9),
+    670px  360px 0 0.3px rgba(255,255,255,0.4),
+    220px  520px 0 0.4px rgba(255,255,255,0.7),
+    830px  480px 0 0.5px rgba(255,255,255,0.6),
+    50px   640px 0 0.3px rgba(255,255,255,0.5),
+    390px  700px 0 0.4px rgba(255,255,255,0.8),
+    710px  620px 0 0.3px rgba(255,255,255,0.4),
+    160px  780px 0 0.5px rgba(255,255,255,0.7),
+    540px  850px 0 0.3px rgba(255,255,255,0.5),
+    920px  740px 0 0.4px rgba(255,255,255,0.6),
+    /* Layer 2 — medium stars */
+    200px  180px 0 0.8px rgba(255,255,255,0.6),
+    600px  280px 0 0.7px rgba(255,255,255,0.5),
+    400px  500px 0 0.8px rgba(255,255,255,0.7),
+    800px  120px 0 0.6px rgba(255,255,255,0.4),
+    100px  460px 0 0.7px rgba(255,255,255,0.6),
+    700px  680px 0 0.8px rgba(255,255,255,0.5),
+    300px  820px 0 0.7px rgba(255,255,255,0.7),
+    950px  380px 0 0.6px rgba(255,255,255,0.4),
+    /* Layer 3 — bright accent stars */
+    250px  100px 0 1px   rgba(165,180,252,0.6),
+    650px  450px 0 1px   rgba(34,211,238,0.5),
+    480px  250px 0 1.2px rgba(255,255,255,0.9),
+    150px  600px 0 1px   rgba(165,180,252,0.5),
+    850px  550px 0 1.2px rgba(34,211,238,0.4),
+    370px  150px 0 1px   rgba(255,255,255,0.7),
+    750px  800px 0 1px   rgba(165,180,252,0.6);
+  animation: twinkle 8s ease-in-out infinite alternate;
+}
+
+/* ── Keyframes ───────────────────────────────────── */
+
+@keyframes twinkle {
+  0%   { opacity: 0.7; }
+  50%  { opacity: 1; }
+  100% { opacity: 0.8; }
+}
+
+@keyframes pulse-dot {
+  0%, 80%, 100% { transform: scale(0.4); opacity: 0.3; }
+  40% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ── Utility classes ─────────────────────────────── */
+
+.animate-fade-slide-up {
+  animation: fadeSlideUp 0.3s ease-out both;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out both;
+}
+
+/* Typing dots */
+.typing-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #6366f1;
+  animation: pulse-dot 1.4s ease-in-out infinite;
+}
+.typing-dot:nth-child(2) { animation-delay: 0.2s; }
+.typing-dot:nth-child(3) { animation-delay: 0.4s; }
+
+/* ── Scrollbar ───────────────────────────────────── */
+
+.chat-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+.chat-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.chat-scroll::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 3px;
+}
+.chat-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
 }
