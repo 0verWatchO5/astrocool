@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "AstroCool AI  Space-Based AI Infrastructure",
+  title: "AstroCool Space-Based AI Infrastructure",
   description:
     "AstroCool moves AI data centers to Low Earth Orbit. Ask our AI assistant about the mission, technology, and vision.",
 };

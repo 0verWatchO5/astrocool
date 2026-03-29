@@ -159,7 +159,7 @@ export default function ChatWidget() {
             >
               {msg.role === "ai" && msg.id !== "welcome" && (
                 <span className="mb-1 block text-[11px] font-bold tracking-wide text-astro-teal">
-                  AstroCool AI
+                  AstroCool
                 </span>
               )}
               {msg.text}
