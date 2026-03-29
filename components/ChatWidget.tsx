@@ -23,7 +23,7 @@ const STARTER_CHIPS = [
 const WELCOME_MESSAGE: Message = {
   id: "welcome",
   role: "ai",
-  text: "Welcome aboard! 🚀 I'm AstroCool AI  ask me anything about our mission to move AI data centers to Low Earth Orbit. Try one of the suggestions below, or type your own question.",
+  text: "Welcome aboard! 🚀 I'm AstroCool AI  ask me anything about our mission to move AI data centers to Sun-synchronous Orbit. Try one of the suggestions below, or type your own question.",
 };
 
 /* ── Component ───────────────────────────────────── */
