@@ -1,4 +1,4 @@
-// components/ChatWidget.tsx — AstroCool interactive chat UI
+// components/ChatWidget.tsx  AstroCool interactive chat UI
 "use client";
 
 import { useState, useRef, useEffect, useCallback, type FormEvent } from "react";
@@ -23,7 +23,7 @@ const STARTER_CHIPS = [
 const WELCOME_MESSAGE: Message = {
   id: "welcome",
   role: "ai",
-  text: "Welcome aboard! 🚀 I'm AstroCool AI — ask me anything about our mission to move AI data centers to Low Earth Orbit. Try one of the suggestions below, or type your own question.",
+  text: "Welcome aboard! 🚀 I'm AstroCool AI  ask me anything about our mission to move AI data centers to Low Earth Orbit. Try one of the suggestions below, or type your own question.",
 };
 
 /* ── Component ───────────────────────────────────── */
@@ -76,7 +76,7 @@ export default function ChatWidget() {
           answer = data.error || "Please rephrase your question.";
         } else {
           answer =
-            "AstroCool's orbital systems are temporarily offline. Please try again shortly — our ground team is on it 🛰️";
+            "AstroCool's orbital systems are temporarily offline. Please try again shortly  our ground team is on it 🛰️";
         }
 
         const aiMsg: Message = {
@@ -131,7 +131,7 @@ export default function ChatWidget() {
           </div>
         </div>
         <span className="rounded-full border border-astro-amber/30 bg-amber-50 px-3 py-1 text-xs font-medium text-astro-amber">
-          Prototype Demo — RT-MSSU
+          Prototype Demo  RT-MSSU
         </span>
       </header>
 
@@ -153,8 +153,8 @@ export default function ChatWidget() {
             )}
             <div
               className={`max-w-[85%] rounded-2xl px-4 py-3 text-sm leading-relaxed sm:max-w-[75%] ${msg.role === "user"
-                  ? "rounded-br-md bg-astro-teal text-white font-medium"
-                  : "rounded-bl-md border border-border-light bg-white text-slate-900 shadow-sm"
+                ? "rounded-br-md bg-astro-teal text-white font-medium"
+                : "rounded-bl-md border border-border-light bg-white text-slate-900 shadow-sm"
                 }`}
             >
               {msg.role === "ai" && msg.id !== "welcome" && (

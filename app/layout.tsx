@@ -1,4 +1,4 @@
-// app/layout.tsx — AstroCool root layout
+// app/layout.tsx  AstroCool root layout
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "AstroCool AI — Space-Based AI Infrastructure",
+  title: "AstroCool AI  Space-Based AI Infrastructure",
   description:
     "AstroCool moves AI data centers to Low Earth Orbit. Ask our AI assistant about the mission, technology, and vision.",
 };

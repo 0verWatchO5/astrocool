@@ -1,4 +1,4 @@
-// app/page.tsx — AstroCool home page (Server Component)
+// app/page.tsx  AstroCool home page (Server Component)
 import ChatWidget from "@/components/ChatWidget";
 
 export default function Home() {

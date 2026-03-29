@@ -1,4 +1,4 @@
-// app/api/ask/route.ts — AstroCool API proxy to Raspberry Pi Flask backend
+// app/api/ask/route.ts  AstroCool API proxy to Raspberry Pi Flask backend
 
 import { NextRequest, NextResponse } from "next/server";
 
@@ -55,7 +55,7 @@ function sanitise(raw: unknown): string | null {
 /* ── POST handler ──────────────────────────────────────────── */
 
 const FALLBACK_MESSAGE =
-  "AstroCool's orbital systems are temporarily offline. Please try again shortly — our ground team is on it 🛰️";
+  "AstroCool's orbital systems are temporarily offline. Please try again shortly  our ground team is on it 🛰️";
 
 export async function POST(request: NextRequest) {
   // 1. Read client IP
